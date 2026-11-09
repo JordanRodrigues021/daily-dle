@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Daily Dle</title>
+  <meta name="description" content="Forty-six daily puzzles, one scoreboard, one champion a day.">
+  <meta name="theme-color" content="#F4EEE3">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='6' width='52' height='52' rx='14' fill='%232D5BFF'/%3E%3Crect x='2' y='2' width='52' height='52' rx='14' fill='%23FF4D9E'/%3E%3Ctext x='28' y='42' font-family='Georgia,serif' font-style='italic' font-weight='900' font-size='34' text-anchor='middle' fill='%23FFFAF1'%3Ed%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Martian+Mono:wght@400;600;800&family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    try { var t = localStorage.getItem('dle:theme'); if (t) document.documentElement.dataset.theme = JSON.parse(t); } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="mast">
+    <div class="mast-strip">
+      <span id="dateline" class="mono"></span>
+      <span class="mast-right">
+        <button id="sync" class="sync mono" data-action="go" data-view="club" title="Sync status"></button>
+        <button class="icon-btn" data-action="theme" aria-label="Toggle night edition" title="Night edition">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+        </button>
+      </span>
+    </div>
+
+    <div class="mast-main">
+      <h1 class="logo" aria-label="The Daily Dle">
+        <span class="logo-the">The</span>
+        <span class="logo-word" data-text="Daily Dle">Daily Dle</span>
+      </h1>
+      <div class="mast-side">
+        <p class="motto">All the puzzles<br>fit to play.</p>
+        <button id="whoami" class="whoami" data-action="whoami"></button>
+      </div>
+    </div>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab" data-action="go" data-view="today" role="tab">Today</button>
+      <button class="tab" data-action="go" data-view="standings" role="tab">Standings</button>
+      <button class="tab" data-action="go" data-view="rules" role="tab">Rules</button>
+      <button class="tab" data-action="go" data-view="club" role="tab">Club</button>
+    </nav>
+
+    <div class="ticker" aria-label="Today's results"><div id="ticker" class="ticker-track"></div></div>
+  </header>
+
+  <main id="view" class="view"></main>
+
+  <footer class="foot">
+    <p>Every game here belongs to its makers. This is just the scoreboard.</p>
+    <p id="bonus"></p>
+  </footer>
+
+  <div id="sheet" class="sheet-wrap" hidden></div>
+  <div id="modal" class="modal-wrap" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="games.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
