@@ -8,6 +8,6 @@
   room → any word. Everyone with the same db + room shares a leaderboard.
 */
 window.DLE_CONFIG = {
-  db: '',          // e.g. 'https://daily-dle-1234-default-rtdb.firebaseio.com'
+  db: 'https://daily-dle-default-rtdb.asia-southeast1.firebasedatabase.app',
   room: 'crew',
 };
